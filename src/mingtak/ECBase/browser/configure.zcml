@@ -1,0 +1,38 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="mingtak.ECBase">
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="mingtak.ECBase.interfaces.IMingtakEcbaseLayer"
+      />
+
+  <!-- Publish static files -->
+  <plone:static
+      name="mingtak.ECBase"
+      type="plone"
+      directory="static"
+      />
+
+  <!-- Browser View -->
+  <browser:page
+      name="import_district"
+      for="*"
+      class=".views.ImportDistrict"
+      layer="mingtak.ECBase.interfaces.IMingtakEcbaseLayer"
+      permission="cmf.ManagePortal"
+  />
+
+  <!-- configlet -->
+  <browser:page
+    name="customControlPanel"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    permission="cmf.ManagePortal"
+    class=".configlet.CustomControlPanelView"
+    />
+
+</configure>
