@@ -42,6 +42,11 @@ setup(
         'Products.GenericSetup>=1.8.2',
         'setuptools',
         'z3c.jbot',
+        'plone.directives.form',
+        'MySQL-python',
+        'sqlalchemy',
+        'requests',
+        'beautifulsoup4',
     ],
     extras_require={
         'test': [
