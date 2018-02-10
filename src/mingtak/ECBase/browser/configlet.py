@@ -38,6 +38,12 @@ class ICustom(Form.Schema):
         required=False,
     )
 
+    lang = schema.TextLine(
+        title=_(u"Google reCAPTCHA's Language"),
+        default=u'zh-TW',
+        required=False,
+    )
+
 
 class CustomControlPanelForm(RegistryEditForm):
     form.extends(RegistryEditForm)

@@ -7,8 +7,9 @@ from mingtak.ECBase.browser.configlet import ICustom
 from plone import api
 
 siteKey = api.portal.get_registry_record('siteKey', interface=ICustom)
+lang = api.portal.get_registry_record('lang', interface=ICustom)
 ?>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=${lang}'></script>
     <div class="g-recaptcha" data-sitekey="${siteKey}"></div>
 </metal:row>
 
