@@ -27,6 +27,15 @@
       permission="cmf.ManagePortal"
   />
 
+  <browser:page
+      name="recaptcha"
+      for="*"
+      class=".views.ReCaptcha"
+      template="template/recaptcha.pt"
+      layer="mingtak.ECBase.interfaces.IMingtakEcbaseLayer"
+      permission="zope2.View"
+  />
+
   <!-- configlet -->
   <browser:page
     name="customControlPanel"

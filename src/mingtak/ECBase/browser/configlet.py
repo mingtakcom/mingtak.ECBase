@@ -27,6 +27,17 @@ class ICustom(Form.Schema):
         required=False,
     )
 
+    # reCAPTCHA
+    siteKey = schema.TextLine(
+        title=_(u"Google reCAPTCHA's Site Key"),
+        required=False,
+    )
+
+    secretKey = schema.TextLine(
+        title=_(u"Google reCAPTCHA's Secret Key"),
+        required=False,
+    )
+
 
 class CustomControlPanelForm(RegistryEditForm):
     form.extends(RegistryEditForm)

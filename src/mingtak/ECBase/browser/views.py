@@ -78,3 +78,7 @@ class SqlObj:
         conn.close()
         if execResult.returns_rows:
             return execResult.fetchall()
+
+
+class ReCaptcha(BrowserView):
+    """  """
