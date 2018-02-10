@@ -82,3 +82,15 @@ class SqlObj:
 
 class ReCaptcha(BrowserView):
     """  """
+
+
+class VerifyReCaptcha(BrowserView):
+
+    def __call__(self):
+        secretKey = api.portal.get_registry_record('secretKey', interface=ICustom)
+        g_recaptcha_response = self.request.form.get('g-recaptcha-response')
+        req = requests.post("https://www.google.com/recaptcha/api/siteverify",
+            data={'secret':secretKey, 'response':g_recaptcha_response}
+        )
+        result = json.loads(req.text)
+        return result.get('success')

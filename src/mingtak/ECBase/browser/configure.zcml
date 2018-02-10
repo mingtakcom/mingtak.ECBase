@@ -36,6 +36,14 @@
       permission="zope2.View"
   />
 
+  <browser:page
+      name="verify_recaptcha"
+      for="*"
+      class=".views.VerifyReCaptcha"
+      layer="mingtak.ECBase.interfaces.IMingtakEcbaseLayer"
+      permission="zope2.View"
+  />
+
   <!-- configlet -->
   <browser:page
     name="customControlPanel"

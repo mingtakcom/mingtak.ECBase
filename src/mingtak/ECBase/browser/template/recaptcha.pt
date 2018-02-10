@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-    xmlns:metal="http://xml.zope.org/namespaces/metal">
+      xmlns:metal="http://xml.zope.org/namespaces/metal">
 
-<matel:macro define-macro="recaptcha">
+<metal:row define-macro="recaptcha">
 <?python
 from mingtak.ECBase.browser.configlet import ICustom
 from plone import api
@@ -10,6 +10,6 @@ siteKey = api.portal.get_registry_record('siteKey', interface=ICustom)
 ?>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <div class="g-recaptcha" data-sitekey="${siteKey}"></div>
-</matel:macro>
+</metal:row>
 
 </html>
